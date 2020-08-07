@@ -1,23 +1,23 @@
 package image
 
 import (
-	"fmt"
 	"github.com/tebeka/selenium"
 )
 
 const (
 	browserName = "firefox"
-	className = "js-yearly-contributions"
+	className   = "js-yearly-contributions"
 )
 
 func get_url(username string) string {
-	return fmt.Sprintf("https://github.com/%s", username)
+	return "http://github.com/" + username
 }
 
 func Image(username string) ([]byte, error) {
 
 	caps := selenium.Capabilities{"browserName": browserName}
-	wd, err := selenium.NewRemote(caps, get_url(username))
+	wd, err := selenium.NewRemote(caps, "")
+	wd.Get(get_url(username))
 	if err != nil {
 		return nil, err
 	}
