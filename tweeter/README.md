@@ -14,4 +14,4 @@ ACCESS_SECRET={Twitterのトークン4}
 
 ※ GitHubのトークンは [ここ](https://github.com/settings/tokens) の `Personal access tokens` からいただいてください
 
-24時間の総コミット数と__"芝生"をツイートします
+起動すると24時間の総コミット数と__"芝生"をツイートします
