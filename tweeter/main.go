@@ -67,8 +67,15 @@ func main() {
 		}
 	}()
 
-	if err := godotenv.Load(); err != nil {
-		panic(err.Error())
+	if len(os.Args) == 1 {
+		if err := godotenv.Load(); err != nil {
+			panic(err.Error())
+		}
+
+	} else {
+		if err := godotenv.Load(os.Args[1:]...); err != nil {
+			panic(err.Error())
+		}
 	}
 	fmt.Print("Getting GitHub Data ...")
 	svg, login, commits := getHubDatas(0, 0, 1)
